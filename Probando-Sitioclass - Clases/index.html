@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Sitio Web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</head>
+<body bgcolor="gray">
+    <div id="encabezado">
+        <h1>Sitio Web de Martin</h1>
+        <hr>
+        <h2>Probando un poco de HTML</h2>
+        <p>Esta es una primera prueba de<br>creación de un sitio web</p>
+</div>
+    <p>Probamos la etiqueta IMG</p>
+    <code>&lt;https://static.vecteezy.com/system/resources/previews/000/674/733/original/vector-gamer-mascot-logo-sticker-design.jpg IMGAGEN DIRECCION&gt;</code>
+    <br><img src="imgs/IMG01.jpg" alt="Imagen LOGO GAMER" width="150px">
+    
+    <hr>     <!--hr inserta una línea horizontal-->
+    <p>Probamos la etiqueta A que permite crear enlaces</p>
+    <p>Creamos un enlace a Compra Gamer</p>
+
+    <!--en la etiqueta a el atributo src nos permite colocar la dirección hacia donde nos conecta el enlace-->
+    <br><a href="https://compragamer.com/" target="_blank">Clic aquí</a> <!--Link Compra Gamer-->
+    <p>Probamos crear un enlace donde la imagen se pueda pulsar</p>
+    <br><a href="https://compragamer.com/" target="_parent"><img src="imgs/IMG02.jpg" alt="Linkcompragamer" height="150px"></a>
+
+
+    <div id="etiquetasDeBloque">
+        <p>Países que juegan en la zona de <span class="destacado">Argentina</span> en el Mundial Sub 20</p>
+        <ul>
+            <li class="destacado">Argentina</li>
+            <li>Nueva Zelanda</li>
+            <li>Guatemala</li>
+            <li>Uzbequistán</li>
+        </ul>
+        <p>Países que juegan en la zona de Brasil en el <span>Mundial Sub 20</span></p>
+        <ol>
+            <li>Brasil</li>
+            <li>Nigeria</li>
+            <li>Italia</li>
+            <li>República Dominicana</li>
+        </ol>
+    </div>
+    <h3>Probando tablas</h3>
+    <div id="tablaTemperatura">
+        <center>
+        <table class="table table-success table-striped"><border="2px" style="background-color: aquamarine;">
+            <tr>
+                <th colspan="6">Temperatura San Justo</th>
+            </tr>
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+            <tr>
+                <td>7:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>8:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="6">Fuente:Infoclima</td>
+            </tr>
+        </table>
+    </center>
+    </div>
+    <br>
+    <!--este tipo de DIV fue reemplazado por la etiqueta footer-->
+
+        <!--TABLA TEMAS INGENIERÍA-->
+    <div id="tablaTemas">
+        <table class="table table-dark table-striped"><border="2px">
+            <tr>
+                <th rowspan="3">Ingeniería 2023</th>
+                <th colspan="3">Temas</th>
+            </tr>
+            <tr>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>Javascript</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Etiquetas en línea</li>
+                        <li>Etiquetas de bloque</li>
+                        <li>Referencias relativas y absolutas</li>
+                        <li>Etiquetas semánticas</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Selectores</li>
+                        <li>Modelo de cajas</li>
+                        <li>Ubicación</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Sintaxis</li>
+                        <li>Funciones</li>
+                        <li>Librerias</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="destacado">Instituto Nº20</th>
+            </tr>
+        </table>
+    </div>
+    Lower Camel case
+    Upper Camel case
+    <div id="pieDePagina">
+        <p>Texto final de la página web</p>
+    </div>
+
+
+</body>
+</html>

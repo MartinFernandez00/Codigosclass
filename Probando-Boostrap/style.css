@@ -1,0 +1,66 @@
+body {
+    background-image: url(img/descargar.php.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Menu*/
+nav {
+    background-color: #333; /* Color de fondo de la barra de navegación */
+}
+
+nav ul {
+    list-style-type: none; /* Elimina los puntos de viñeta de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block; /* Los elementos de navegación se muestran en línea */
+}
+
+nav a {
+    display: block;
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina la subrayado de los enlaces */
+    padding: 10px 20px; /* Espaciado alrededor de los enlaces */
+}
+
+nav a:hover {
+    background-color: #666; /* Color de fondo cuando se pasa el ratón por encima */
+}
+
+#nombreE {
+    margin-left: 45%;
+    color:yellow;
+}
+@font-face {
+    font-family: letratitutlo;
+    src: url("#");
+}
+
+/*Imagenes ilustrativas*/
+.image-container img {
+    /* Estilos para las imágenes */
+    width: 160px;
+    height: auto;
+    margin: 20px;
+    border-radius: 20px;
+    border: black solid;
+}
+.image-container {
+    /* Estilos para el contenedor */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+}
+.image-container img:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.accordion accordion-flush{
+    position: relative;
+    top: 200px;
+}

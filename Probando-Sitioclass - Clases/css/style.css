@@ -1,0 +1,58 @@
+/*Selector universal*/
+
+/*selector de etiqueta*/
+h1,h2,h3 {
+    border: solid 2px black;
+    background-color: beige;
+    text-align: center;
+    padding: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+/*selector descendente*/
+p span{
+    border: double 4px black;
+    background-color: blue;
+}
+#etiquetasDeBloque ul li{
+    text-decoration: underline;
+    color:rgb(63, 0, 123);
+}
+/*Selector de clase*/
+.destacado {
+    background-color: rgb(73, 153, 153);
+}
+.destacado:hover {
+    background-color: rgb(90, 156, 33);
+}
+/*Selector de hijos*/
+div > p {
+    font-style: italic;
+}
+/*Selector adyacente*/
+li + li {
+    background-color: burlywood;
+}
+/*Selectores de atributos*/
+img[width] {
+    border-radius: 40px;
+    border: solid 1px black;
+}
+a[target="_blank"]{
+    text-transform: uppercase;
+    color: brown;
+}
+span[border-style~="double"]{
+    color: rgb(24, 0, 76) !important;
+}
+
+#pieDePagina {
+    box-shadow: 10px 4px 8px black;
+    padding: 5px 20px;
+    margin:10px;
+    background-color: rgb(0, 128, 128);
+    border-radius: 8px;
+}
+#pieDePagina:hover{
+    background-color: rgb(0, 0, 69);
+    color: aliceblue;
+}
