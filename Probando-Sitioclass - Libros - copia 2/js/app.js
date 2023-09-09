@@ -21,20 +21,8 @@ const applibros = {
             console.log(libros);
 
             for (const libro of libros){
-                contenidoHTML +=`
-                <div>
-
-                    <img src="${libro.portada_url}"
-                    class="img-thumbnail"/>
-                <details>
-                    <summary>${libro.nombre}</summary>
-                    ${libro.sinopsis}
-                </details>
-                
-                </div>
-                `;
+                contenidoHTML +=`<h4>${libro.nombre}</h4>`
             };
-        console.log(contenidoHTML)
         contenedor.innerHTML=contenidoHTML;
         })
     }
