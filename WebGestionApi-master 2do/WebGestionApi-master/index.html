@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module" src="js/formRegistro.js" defer></script>
+  <script type="module" src="js/formIniciarSesion.js" defer></script>
+  <script type="module" src="js/loginGoogle.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script type="module" src="js/loginCheck.js" defer></script>
+  <script type="module" src="js/cerrarSesion.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+  <title>Gestión de Películas - API </title>
+</head>
+
+<body onload="movies.obtenerTodos();">
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Gestión de Películas con API REST</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link desconectado" href="#" data-bs-toggle="modal"
+                data-bs-target="#iniciarSesionModal">Iniciar sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link desconectado" href="#" data-bs-toggle="modal"
+                data-bs-target="#registrarseModal">Registrarse</a>
+            </li>
+            <li class="nav-item conectado">
+              <a class="nav-link" href="#" id="cerrarSesionMenu">Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <main class="container">
+    <p>Este proyecto es una demostración de gestión de películas mediante API REST.</p>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarEditarModal"
+      onclick="document.getElementById('formPelicula').reset();">Agregar película
+    </button>
+
+    <div id="contenedorPeliculas">
+
+    </div>
+
+  </main>
+
+  <!-- Modal Agregar/Editar Pelicula -->
+  <div class="modal fade" id="agregarEditarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar/editar película</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" id="formPelicula" onsubmit="return false;">
+            <input type="hidden" name="txtIdPelicula" id="txtIdPelicula">
+            <div class="mb-3">
+              <label for="txtNombre" class="form-label">Nombre:</label>
+              <input type="text" class="form-control" id="txtNombre" name="txtNombre">
+            </div>
+            <div class="mb-3">
+              <label for="txtGenero" class="form-label">Genero:</label>
+              <input type="text" class="form-control" id="txtGenero" name="txtGenero">
+            </div>
+            <div class="mb-3">
+              <label for="txtDuracion" class="form-label">Duración:</label>
+              <input type="text" class="form-control" id="txtDuracion" name="txtDuracion">
+            </div>
+            <div class="mb-3">
+              <label for="txtTrailerUrl" class="form-label">Url del trailer:</label>
+              <input type="text" class="form-control" id="txtTrailerUrl" name="txtTrailerUrl">
+            </div>
+            <div class="mb-3">
+              <label for="txtSinopsis" class="form-label">Sinopsis:</label>
+              <textarea rows="4" class="form-control" id="txtSinopsis" name="txtSinopsis"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="txtPortadaUrl" class="form-label">Url imagen de portada:</label>
+              <input type="text" class="form-control" id="txtPortadaUrl" name="txtPortadaUrl">
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="movies.agregarNuevaPelicula();">Guardar los
+            cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Iniciar Sesión-->
+  <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesión</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formIniciarSesion">
+            <label for="txtEmail" class="form-label">Email:</label>
+            <input type="email" name="txtEmail" id="txtEmail" class="form-control" required><br />
+            <label for="txtPassword" class="form-label">Contraseña:</label>
+            <input type="password" name="txtPassword" id="txtPassword" class="form-control" required><br />
+            <input type="submit" value="Enviar" class="btn btn-primary form-control">
+          </form>
+          <button class="btn btn-info mt-3" id="btnLoginGoogle">Google</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Registrarse-->
+  <div class="modal fade" id="registrarseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrarse</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formRegistro">
+            <label for="txtEmail" class="form-label">Email:</label>
+            <input type="email" name="txtEmail" id="txtEmail" class="form-control" required><br />
+            <label for="txtPassword" class="form-label">Contraseña:</label>
+            <input type="password" name="txtPassword" id="txtPassword" class="form-control" required><br />
+            <input type="submit" value="Enviar" class="btn btn-primary form-control">
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

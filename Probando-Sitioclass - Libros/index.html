@@ -12,9 +12,14 @@
     <script type="module" src="js/app.js" defer></script>
     <script type="module" src="/js/formregistro.js" defer></script>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container">
@@ -39,9 +44,19 @@
             </div>
         </nav>
     </header>
+
+    <div class="container">
+    <button class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#agregarEditarModal">
+    Agregar Libros
+    </button>
+    </div>
+
     <main class="container" id="contenedorLibros">
     
     </main>
+
     <footer class="container">
         <div class="card text-center">
             <div class="card-header">
@@ -56,6 +71,48 @@
             </div>
         </div>
     </footer>
+
+
+<!--Modal Agregar/Editar Libros-->
+<div class="modal fade" id="agregarEditarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar/Editar Libros</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form id="agregarEditarForm" onsubmit="return false">
+
+                    <label for="txtNombre" class="form-label">Nombre:</label>
+                    <input type="text" id="txtNombre" class="form-control mb-3">
+
+                    <label for="txtNombre" class="form-label">Páginas:</label>
+                    <input type="number" id="txtPaginas" class="form-control mb-3">
+
+                    <label for="txtAutor" class="form-label">Autor:</label>
+                    <input type="text" id="txtAutor" class="form-control mb-3">
+
+                    <label for="txtEditorial" class="form-label">Editorial:</label>
+                    <input type="text" id="txtEditorial" class="form-control mb-3">
+
+                    <label for="txtPortadaUrl" class="form-label">Url de la portada:</label>
+                    <input type="text" id="txtPortadaUrl" class="form-control mb-3">
+
+                    <label for="txtSinopsis" class="form-label">Sinopsis:</label>
+                    <textarea id="txtSinopsis" class="form-control mb-3" rows="3"></textarea>
+
+                    <label for="txtGenero" class="form-label">Genero:</label>
+                    <input type="text" id="txtGenero" class="form-control mb-3">
+                    <input type="submit" value="Enviar" class="form-control btn btn-primary" onclick="applibros.agregarLibros();">
+
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
 
 <!--Modal Iniciar Sesión-->
     <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
