@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca ISP20</title>
-    <link rel="stylesheet" href="/css/contenedorlibros.css">
+    <link rel="stylesheet" href="css/contenedorlibros.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script type="module" src="js/firebase.js"></script>
@@ -73,7 +73,7 @@
     </footer>
 
 
-<!--Modal Agregar/Editar Libros-->
+<!--Modal Agregar Libros-->
 <div class="modal fade" id="agregarEditarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -89,7 +89,7 @@
                     <label for="txtNombre" class="form-label">Nombre:</label>
                     <input type="text" id="txtNombre" class="form-control mb-3">
 
-                    <label for="txtNombre" class="form-label">Páginas:</label>
+                    <label for="txtPaginas" class="form-label">Páginas:</label>
                     <input type="number" id="txtPaginas" class="form-control mb-3">
 
                     <label for="txtAutor" class="form-label">Autor:</label>
@@ -106,6 +106,7 @@
 
                     <label for="txtGenero" class="form-label">Genero:</label>
                     <input type="text" id="txtGenero" class="form-control mb-3">
+
                     <input type="submit" value="Enviar" class="form-control btn btn-primary" onclick="applibros.agregarLibros();">
 
                     </form>
