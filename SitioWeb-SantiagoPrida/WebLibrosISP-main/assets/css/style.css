@@ -1,0 +1,85 @@
+#buttonSesion {
+    display: inline-flex;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0 6px;
+    background-color: #F2F3F5;
+}
+#buttonRegister {
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0 6px;
+    margin: 0px 0px 0px 16px;
+    background-color: #8B3DFF;
+}
+
+#linkSesion {
+    color: black;
+    font-weight: bold;
+}
+#linkRegister {
+    color: white;
+    font-weight: bold;
+}
+
+#bgNav {
+    padding: 8px 0px;
+    box-sizing: content-box;
+    box-shadow: 0px 2px 2px rgba(77, 77, 77, 0.2);
+    margin-bottom: 2rem;
+
+}
+
+#btn-addBook {
+    border: 2px solid transparent;
+    font-weight: normal;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 6px 6px;
+}
+
+#card-image{
+    height: 450px;
+}
+
+#card-bdy {
+    height: 200px;
+}
+
+#card-main {
+    box-sizing: content-box;
+    box-shadow: 2px 2px 2px rgba(77, 77, 77, 0.2);
+    
+}
+#bookListener {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.viewModalp{
+    margin-bottom: 1px;
+}
+.viewModalText {
+    display: block;
+    font-size: 14px;
+}
+#buttonSesion:hover{
+    background-color: #e2e3e4;
+    transition: background-color 0.3s;
+}
+
+#buttonRegister:hover{
+    background-color: #a469fc;
+    transition: background-color 0.3s;
+}
+#linkSesion:hover {
+    transition: color 0.5s;
+}
+
+#btn-addBook:hover {
+    background-color:#8B3DFF ;
+    transition: background-color 0.5s;
+}
