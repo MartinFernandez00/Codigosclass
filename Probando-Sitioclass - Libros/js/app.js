@@ -17,7 +17,7 @@ const applibros = {
                 contenidoHTML+= `
                 <div>
                     <img src="${libro.portada_url}" class="img-thumbnail"/>
-                        <h4 style="text-align: left;">${libro.nombre}</h4>
+                        <h6 style="text-align: left;">${libro.nombre}</h6>
                         <h7 style="text-align: left;">Autor: ${libro.autor}<h7/>
                         <h6 style="text-align: left;">Género: ${libro.genero}<h6/>
 

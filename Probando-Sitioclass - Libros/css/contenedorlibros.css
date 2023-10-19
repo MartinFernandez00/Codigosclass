@@ -2,14 +2,11 @@
         display: grid;
         gap: 10px;
         grid-template-columns: repeat(3, 1fr);
-        
     }
 
     #contenedorLibros img {
         width: 150px;
         height: 200px;
-        justify-content: center; /* Centra horizontalmente */
-        align-items: center; /* Centra verticalmente */    
     }
 
 /* styles.css o tu archivo CSS externo */
